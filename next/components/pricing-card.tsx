@@ -7,7 +7,7 @@ import { useState } from "react";
 
 interface PricingCardProps {
   product: ProductWithPrices;
-  isCurrentPlan?: boolean;
+  isCurrentPlan: boolean;
   interval: "month" | "year";
 }
 
@@ -24,7 +24,9 @@ export default function PricingCard({
     const redirectUrl = `http://localhost:4000/protected/subscription`;
     const { data, error } = await client.billing.createCheckoutSession(
       priceId,
-      redirectUrl,
+      {
+        redirect_url: redirectUrl,
+      },
     );
     if (error) {
       setIsLoading(false);
@@ -43,21 +45,20 @@ export default function PricingCard({
   }
 
   const { name, description } = product;
-  const { unitAmount } = productPrice;
 
-  const priceString = unitAmount
-    ? `$${(unitAmount / 100).toFixed(2)}`
+  const priceString = productPrice.unit_amount
+    ? `$${(productPrice.unit_amount / 100).toFixed(2)}`
     : "Custom";
 
   return (
     <div
-      className={`border rounded-lg p-6 space-y-4 ${isCurrentPlan ? "border-primary" : ""}`}
+      className={`border rounded-lg p-6 space-y-4`}
     >
       <div className="space-y-2">
         <h3 className="text-xl font-medium">{name}</h3>
         <div className="flex items-baseline gap-1">
           <span className="text-3xl font-bold">{priceString}</span>
-          {productPrice?.unitAmount && (
+          {productPrice?.unit_amount && (
             <span className="text-muted-foreground">/month</span>
           )}
         </div>

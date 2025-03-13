@@ -8,8 +8,10 @@ import { cn } from "@/lib/utils";
 
 export default function PricingContent({
   products,
+  currentProductId,
 }: {
   products: ProductWithPrices[];
+  currentProductId: string | null;
 }) {
   const [interval, setInterval] = useState<"month" | "year">("month");
 
@@ -20,7 +22,7 @@ export default function PricingContent({
           className={cn(
             "bg-primary/10 text-primary hover:bg-primary/20",
             interval === "month" &&
-              "bg-primary text-primary-foreground hover:bg-primary/50",
+            "bg-primary text-primary-foreground hover:bg-primary/50",
           )}
           onClick={() => setInterval("month")}
         >
@@ -30,7 +32,7 @@ export default function PricingContent({
           className={cn(
             "bg-primary/10 text-primary hover:bg-primary/20",
             interval === "year" &&
-              "bg-primary text-primary-foreground hover:bg-primary/50",
+            "bg-primary text-primary-foreground hover:bg-primary/50",
           )}
           onClick={() => setInterval("year")}
         >
@@ -39,7 +41,12 @@ export default function PricingContent({
       </div>
       <div className="grid md:grid-cols-2 gap-6 mt-8">
         {products.map((product) => (
-          <PricingCard key={product.id} product={product} interval={interval} />
+          <PricingCard
+            key={product.id}
+            product={product}
+            interval={interval}
+            isCurrentPlan={currentProductId != null && product.id === currentProductId}
+          />
         ))}
       </div>
     </>
