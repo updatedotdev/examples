@@ -37,7 +37,7 @@ export default async function Page() {
               <div className="grid grid-cols-[150px_1fr]">
                 <div className="text-muted-foreground">Price</div>
                 <div>
-                  ${(subscription.price.unitAmount / 100).toFixed(2)} per{" "}
+                  ${(subscription.price.unit_amount / 100).toFixed(2)} per{" "}
                   {subscription.price.interval}
                 </div>
               </div>
@@ -48,20 +48,18 @@ export default async function Page() {
                     className={cn(
                       "w-2 h-2 rounded-full bg-green-500",
                       (subscription.status === "past_due" ||
-                        subscription.cancelAtPeriodEnd) &&
-                        "bg-yellow-500",
+                        subscription.cancel_at_period_end) &&
+                      "bg-yellow-500",
                       subscription.status === "inactive" && "bg-red-500",
                     )}
                   ></div>
                   {subscription.status === "active" &&
-                    !subscription.cancelAtPeriodEnd &&
+                    !subscription.cancel_at_period_end &&
                     "Active"}
                   {subscription.status === "active" &&
-                    subscription.cancelAtPeriodEnd &&
+                    subscription.cancel_at_period_end &&
                     "Cancelling at period end"}
-                  {(subscription.status === "past_due" ||
-                    subscription.status === "active") &&
-                    "Past due"}
+                  {subscription.status === "past_due" && "Past due"}
                   {subscription.status === "inactive" && "Inactive"}
                 </div>
               </div>

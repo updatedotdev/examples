@@ -18,7 +18,7 @@ export default function SubscriptionActions({
     setIsLoading(true);
     const client = createClient();
     await client.billing.updateSubscription(id, {
-      cancelAtPeriodEnd: true,
+      cancel_at_period_end: true,
     });
     setIsLoading(false);
     router.refresh();
@@ -28,7 +28,7 @@ export default function SubscriptionActions({
     setIsLoading(true);
     const client = createClient();
     await client.billing.updateSubscription(id, {
-      cancelAtPeriodEnd: false,
+      cancel_at_period_end: false,
     });
     setIsLoading(false);
     router.refresh();
@@ -36,7 +36,7 @@ export default function SubscriptionActions({
 
   return (
     <>
-      {subscription.status === "active" && (
+      {!subscription.cancel_at_period_end && (
         <Button
           onClick={() => handleCancelSubscription(subscription.id)}
           disabled={isLoading}
@@ -47,7 +47,7 @@ export default function SubscriptionActions({
           {isLoading ? "Cancelling..." : "Cancel Subscription"}
         </Button>
       )}
-      {subscription.status === "expiring" && (
+      {subscription.cancel_at_period_end && (
         <Button
           onClick={() => handleReactivateSubscription(subscription.id)}
           disabled={isLoading}

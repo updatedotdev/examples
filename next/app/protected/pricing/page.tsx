@@ -4,10 +4,17 @@ import PricingContent from "@/components/pricing-content";
 export default async function PricingPage() {
   const client = await createClient();
   const { data, error } = await client.billing.getProducts();
+  const { data: subscriptionData } = await client.billing.getSubscriptions();
 
   if (error) {
     return <div>There was an error loading products. Please try again.</div>;
   }
+
+  const currentProductId =
+    subscriptionData.subscriptions == null ||
+      subscriptionData.subscriptions.length === 0
+      ? null
+      : subscriptionData.subscriptions[0].product.id;
 
   return (
     <>
@@ -18,7 +25,10 @@ export default async function PricingPage() {
         </p>
       </div>
 
-      <PricingContent products={data.products} />
+      <PricingContent
+        products={data.products}
+        currentProductId={currentProductId}
+      />
     </>
   );
 }
