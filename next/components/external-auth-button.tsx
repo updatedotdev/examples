@@ -6,7 +6,7 @@ import { createClient } from "@/utils/update/client";
 export default function ExternalAuthButton() {
   async function openExternalLogin() {
     const client = createClient();
-    const { data, error } = await client.auth.createAuthFlowLink();
+    const { data, error } = await client.auth.createConnectLink();
     if (error) {
       return;
     }

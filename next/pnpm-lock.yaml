@@ -18,11 +18,11 @@ importers:
         specifier: ^4.0.13
         version: 4.0.13
       '@updatedev/js':
-        specifier: 0.0.6-beta
-        version: 0.0.6-beta
+        specifier: 0.1.0
+        version: 0.1.0
       '@updatedev/ssr':
-        specifier: 0.0.5-beta
-        version: 0.0.5-beta
+        specifier: 0.1.0
+        version: 0.1.0
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -556,12 +556,12 @@ packages:
     resolution: {integrity: sha512-AjOC3zfnxd6S4Eiy3jwktJPclqhFHNyd8L6Gycf9WUPoKZpgM5PjkxY1X7uSy61xVpiJDhhk7XT2NVsN3ALTWg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@updatedev/js@0.0.6-beta':
-    resolution: {integrity: sha512-yBVAcNL0snaN0qUG9Nj6MibQJKYZlkJc9dNWbmwpHcABNzYDxllU16DMfGynLffYtnU0tswd0xjlutlB0A1VSg==}
+  '@updatedev/js@0.1.0':
+    resolution: {integrity: sha512-FLHs+bMelB/eaLBykXM0SekeItqwVg2IgvpdWNMDLDDkK3WyTs4fQgsE5Dy+yPwZZEgHIgcyYIhYXrdJNsTHSQ==}
     engines: {node: '>=12.0'}
 
-  '@updatedev/ssr@0.0.5-beta':
-    resolution: {integrity: sha512-aYn9XB38nzeoKzTHaTe6xNqV7VxfypfIzkkg7eyMOZEgYj8OIcRpMtCIKYo16JVKlsLhPH+PqWp58Qtucb3T2Q==}
+  '@updatedev/ssr@0.1.0':
+    resolution: {integrity: sha512-T1T4kcN0wvJq/L3H/l1pfDkl2Jww4Ml7mkMOtSCkFe8cxg9oi1wLAcTJD4IY36IdNSgkXTNShLZhp5PjL1qy7w==}
     engines: {node: '>=12.0'}
 
   acorn-jsx@5.3.2:
@@ -2206,7 +2206,7 @@ snapshots:
       '@typescript-eslint/types': 8.26.1
       eslint-visitor-keys: 4.2.0
 
-  '@updatedev/js@0.0.6-beta':
+  '@updatedev/js@0.1.0':
     dependencies:
       '@supabase/auth-js': 2.68.0
       '@supabase/supabase-js': 2.49.1
@@ -2215,11 +2215,11 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@updatedev/ssr@0.0.5-beta':
+  '@updatedev/ssr@0.1.0':
     dependencies:
       '@supabase/ssr': 0.5.2(@supabase/supabase-js@2.49.1)
       '@supabase/supabase-js': 2.49.1
-      '@updatedev/js': 0.0.6-beta
+      '@updatedev/js': 0.1.0
       cookie: 1.0.2
     transitivePeerDependencies:
       - bufferutil
