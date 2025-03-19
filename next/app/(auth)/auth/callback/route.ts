@@ -8,7 +8,7 @@ export async function GET(request: Request) {
   if (!code) return NextResponse.redirect(`${origin}/sign-in`);
 
   const client = await createClient();
-  const { error } = await client.auth.verifyConnectCode(code);
+  const { error } = await client.auth.verifyAuthFlowCode(code);
   if (error) {
     return NextResponse.redirect(`${origin}/sign-in`);
   }
