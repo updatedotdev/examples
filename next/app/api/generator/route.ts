@@ -2,15 +2,13 @@ import { createClient } from "@/utils/update/server";
 
 export async function POST() {
   const client = await createClient();
-  const { data, error } = await client.billing.getSubscriptions();
+  const { data, error } = await client.entitlements.check("premium");
 
-  if (error || data.subscriptions.length === 0) {
+  if (error || !data.hasAccess) {
     return new Response("Error fetching subscriptions", { status: 500 });
   }
 
-  const subscription = data.subscriptions[0];
-
-  if (subscription.status !== "active") {
+  if (!data.hasAccess) {
     return new Response("Subscription not active", { status: 403 });
   }
 

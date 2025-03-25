@@ -5,7 +5,7 @@ import PaidContentCard from "@/components/paid-content-card";
 
 export default async function PaidContent() {
   const client = await createClient();
-  const { data, error } = await client.billing.getSubscriptions();
+  const { data, error } = await client.entitlements.check("premium");
 
   if (error) {
     return (
@@ -20,7 +20,7 @@ export default async function PaidContent() {
     );
   }
 
-  if (data.subscriptions.length === 0) {
+  if (!data.hasAccess) {
     return (
       <div className="flex min-h-[400px] items-center justify-center">
         <Card className="p-6">
