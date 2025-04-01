@@ -18,11 +18,11 @@ importers:
         specifier: ^4.0.13
         version: 4.0.13
       '@updatedev/js':
-        specifier: ^0.2.2
-        version: 0.2.2
+        specifier: ^0.3.0
+        version: 0.3.0
       '@updatedev/ssr':
-        specifier: ^0.2.2
-        version: 0.2.2
+        specifier: ^0.3.0
+        version: 0.3.0
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -57,6 +57,9 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3.3.0
         version: 3.3.0
+      '@next/eslint-plugin-next':
+        specifier: ^15.2.4
+        version: 15.2.4
       '@types/node':
         specifier: ^20.17.24
         version: 20.17.24
@@ -72,6 +75,9 @@ importers:
       eslint-config-next:
         specifier: 15.1.7
         version: 15.1.7(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
+      eslint-plugin-react-hooks:
+        specifier: ^5.2.0
+        version: 5.2.0(eslint@9.22.0(jiti@2.4.2))
       postcss:
         specifier: ^8.5.3
         version: 8.5.3
@@ -257,6 +263,9 @@ packages:
   '@next/eslint-plugin-next@15.1.7':
     resolution: {integrity: sha512-kRP7RjSxfTO13NE317ek3mSGzoZlI33nc/i5hs1KaWpK+egs85xg0DJ4p32QEiHnR0mVjuUfhRIun7awqfL7pQ==}
 
+  '@next/eslint-plugin-next@15.2.4':
+    resolution: {integrity: sha512-O8ScvKtnxkp8kL9TpJTTKnMqlkZnS+QxwoQnJwPGBxjBbzd6OVVPEJ5/pMNrktSyXQD/chEfzfFzYLM6JANOOQ==}
+
   '@next/swc-darwin-arm64@15.2.2':
     resolution: {integrity: sha512-HNBRnz+bkZ+KfyOExpUxTMR0Ow8nkkcE6IlsdEa9W/rI7gefud19+Sn1xYKwB9pdCdxIP1lPru/ZfjfA+iT8pw==}
     engines: {node: '>= 10'}
@@ -371,8 +380,8 @@ packages:
   '@rushstack/eslint-patch@1.11.0':
     resolution: {integrity: sha512-zxnHvoMQVqewTJr/W4pKjF0bMGiKJv1WX7bSrkl46Hg0QjESbzBROWK0Wg4RphzSOS5Jiy7eFimmM3UgMrMZbQ==}
 
-  '@supabase/auth-js@2.68.0':
-    resolution: {integrity: sha512-odG7nb7aOmZPUXk6SwL2JchSsn36Ppx11i2yWMIc/meUO2B2HK9YwZHPK06utD9Ql9ke7JKDbwGin/8prHKxxQ==}
+  '@supabase/auth-js@2.69.1':
+    resolution: {integrity: sha512-FILtt5WjCNzmReeRLq5wRs3iShwmnWgBvxHfqapC/VoljJl+W8hDAyFmf1NVw3zH+ZjZ05AKxiKxVeb0HNWRMQ==}
 
   '@supabase/functions-js@2.4.4':
     resolution: {integrity: sha512-WL2p6r4AXNGwop7iwvul2BvOtuJ1YQy8EbOd0dhG1oN1q8el/BIRSFCFnWAMM/vJJlHWLi4ad22sKbKr9mvjoA==}
@@ -395,8 +404,8 @@ packages:
   '@supabase/storage-js@2.7.1':
     resolution: {integrity: sha512-asYHcyDR1fKqrMpytAS1zjyEfvxuOIp1CIXX7ji4lHHcJKqyk+sLl/Vxgm4sN6u8zvuUtae9e4kDxQP2qrwWBA==}
 
-  '@supabase/supabase-js@2.49.1':
-    resolution: {integrity: sha512-lKaptKQB5/juEF5+jzmBeZlz69MdHZuxf+0f50NwhL+IE//m4ZnOeWlsKRjjsM0fVayZiQKqLvYdBn0RLkhGiQ==}
+  '@supabase/supabase-js@2.49.3':
+    resolution: {integrity: sha512-42imTuAm9VEQGlXT0O6zrSwNnsIblU1eieqrAWj8HSmFaYkxepk/IuUVw1M5hKelk0ZYlqDKNwRErI1rF1EL4w==}
 
   '@swc/counter@0.1.3':
     resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
@@ -556,12 +565,12 @@ packages:
     resolution: {integrity: sha512-AjOC3zfnxd6S4Eiy3jwktJPclqhFHNyd8L6Gycf9WUPoKZpgM5PjkxY1X7uSy61xVpiJDhhk7XT2NVsN3ALTWg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@updatedev/js@0.2.2':
-    resolution: {integrity: sha512-h9mWl3CzqalA1eg7TM9R+6yr0e6fkhX8yA7w8k0WL5f7FtiMN1my22Dcq4L0YEXdajRK8vnUKOdjhK76ZsERWQ==}
+  '@updatedev/js@0.3.0':
+    resolution: {integrity: sha512-/uV4KcosBiK3eNa0t0ydAP1XgXyrPtNjzynq6UIpnCYGKfzotNbsZjPmWdOXFjZPI1XbAML8o7epVDtJ6SjSIg==}
     engines: {node: '>=12.0'}
 
-  '@updatedev/ssr@0.2.2':
-    resolution: {integrity: sha512-arQssh3TKiMndJ4JdZcQXbCCX/dBfvtwoxJmImSWhIZvEGwImNpGZ99PIC1t5CWJpyCGz2opYuQerVtOiSkK+w==}
+  '@updatedev/ssr@0.3.0':
+    resolution: {integrity: sha512-HhqNRr5puFpXJyhHTINABzUJow5+xhne1CW4iIlbjQWkkLOSCxgE6mXas8olDwqoin7l14ZVdP9EtRtrlwc6aA==}
     engines: {node: '>=12.0'}
 
   acorn-jsx@5.3.2:
@@ -1914,6 +1923,10 @@ snapshots:
     dependencies:
       fast-glob: 3.3.1
 
+  '@next/eslint-plugin-next@15.2.4':
+    dependencies:
+      fast-glob: 3.3.1
+
   '@next/swc-darwin-arm64@15.2.2':
     optional: true
 
@@ -1987,7 +2000,7 @@ snapshots:
 
   '@rushstack/eslint-patch@1.11.0': {}
 
-  '@supabase/auth-js@2.68.0':
+  '@supabase/auth-js@2.69.1':
     dependencies:
       '@supabase/node-fetch': 2.6.15
 
@@ -2013,9 +2026,9 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@supabase/ssr@0.5.2(@supabase/supabase-js@2.49.1)':
+  '@supabase/ssr@0.5.2(@supabase/supabase-js@2.49.3)':
     dependencies:
-      '@supabase/supabase-js': 2.49.1
+      '@supabase/supabase-js': 2.49.3
       '@types/cookie': 0.6.0
       cookie: 0.7.2
 
@@ -2023,9 +2036,9 @@ snapshots:
     dependencies:
       '@supabase/node-fetch': 2.6.15
 
-  '@supabase/supabase-js@2.49.1':
+  '@supabase/supabase-js@2.49.3':
     dependencies:
-      '@supabase/auth-js': 2.68.0
+      '@supabase/auth-js': 2.69.1
       '@supabase/functions-js': 2.4.4
       '@supabase/node-fetch': 2.6.15
       '@supabase/postgrest-js': 1.19.2
@@ -2206,20 +2219,20 @@ snapshots:
       '@typescript-eslint/types': 8.26.1
       eslint-visitor-keys: 4.2.0
 
-  '@updatedev/js@0.2.2':
+  '@updatedev/js@0.3.0':
     dependencies:
-      '@supabase/auth-js': 2.68.0
-      '@supabase/supabase-js': 2.49.1
+      '@supabase/auth-js': 2.69.1
+      '@supabase/supabase-js': 2.49.3
       cookie: 1.0.2
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  '@updatedev/ssr@0.2.2':
+  '@updatedev/ssr@0.3.0':
     dependencies:
-      '@supabase/ssr': 0.5.2(@supabase/supabase-js@2.49.1)
-      '@supabase/supabase-js': 2.49.1
-      '@updatedev/js': 0.2.2
+      '@supabase/ssr': 0.5.2(@supabase/supabase-js@2.49.3)
+      '@supabase/supabase-js': 2.49.3
+      '@updatedev/js': 0.3.0
       cookie: 1.0.2
     transitivePeerDependencies:
       - bufferutil
