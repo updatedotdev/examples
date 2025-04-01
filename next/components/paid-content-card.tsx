@@ -6,9 +6,13 @@ import { useState } from "react";
 import { Spinner } from "@/components/ui/spinner";
 import { cn } from "@/lib/utils";
 
+type Data = {
+  url: string;
+};
+
 export default function PaidContentCard({ className }: { className?: string }) {
   const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<Data | null>(null);
 
   async function handleRegenerate() {
     setIsLoading(true);
