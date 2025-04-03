@@ -3,9 +3,7 @@ import { createClient } from "@/utils/update/server";
 
 export default async function ProtectedSidebar() {
   const client = await createClient();
-  const { data } = await client.billing.getSubscriptions();
-  const hasAccessToPaidContent =
-    data.subscriptions != null && data.subscriptions.length > 0;
+  const { data } = await client.entitlements.check("premium");
 
   return (
     <InPageSidebar
@@ -26,7 +24,7 @@ export default async function ProtectedSidebar() {
         {
           label: "Paid Content",
           href: "/paid-content",
-          disabled: !hasAccessToPaidContent,
+          disabled: data != null && !data.hasAccess,
         },
       ]}
     />
