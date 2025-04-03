@@ -13,7 +13,9 @@ export default function PricingContent({
   products: ProductWithPrices[];
   currentProductId: string | null;
 }) {
-  const [interval, setInterval] = useState<"month" | "year">("month");
+  const [interval, setInterval] = useState<"month" | "year" | "one-time">(
+    "month"
+  );
 
   return (
     <>
@@ -22,7 +24,7 @@ export default function PricingContent({
           className={cn(
             "bg-primary/10 text-primary hover:bg-primary/20",
             interval === "month" &&
-            "bg-primary text-primary-foreground hover:bg-primary/50",
+              "bg-primary text-primary-foreground hover:bg-primary/50"
           )}
           onClick={() => setInterval("month")}
         >
@@ -32,20 +34,28 @@ export default function PricingContent({
           className={cn(
             "bg-primary/10 text-primary hover:bg-primary/20",
             interval === "year" &&
-            "bg-primary text-primary-foreground hover:bg-primary/50",
+              "bg-primary text-primary-foreground hover:bg-primary/50"
           )}
           onClick={() => setInterval("year")}
         >
           Yearly
         </Button>
+        <Button
+          className="bg-primary/10 text-primary hover:bg-primary/20"
+          onClick={() => setInterval("one-time")}
+        >
+          One-Time
+        </Button>
       </div>
       <div className="grid md:grid-cols-2 gap-6 mt-8">
-        {products.map((product) => (
+        {products.map(product => (
           <PricingCard
             key={product.id}
             product={product}
             interval={interval}
-            isCurrentPlan={currentProductId != null && product.id === currentProductId}
+            isCurrentPlan={
+              currentProductId != null && product.id === currentProductId
+            }
           />
         ))}
       </div>
