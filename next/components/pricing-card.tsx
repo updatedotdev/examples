@@ -8,7 +8,7 @@ import { useState } from "react";
 interface PricingCardProps {
   product: ProductWithPrices;
   isCurrentPlan: boolean;
-  interval: "month" | "year";
+  interval: "month" | "year" | "one-time";
 }
 
 export default function PricingCard({
@@ -56,7 +56,9 @@ export default function PricingCard({
   }
 
   const productPrice = product.prices?.find(
-    price => price.interval === interval
+    price =>
+      price.interval === interval ||
+      (price.type === "one-time" && interval === "one-time")
   );
 
   if (!productPrice) {
