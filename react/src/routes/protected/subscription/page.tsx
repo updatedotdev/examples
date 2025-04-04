@@ -1,16 +1,33 @@
 import SubscriptionActions from "@/components/subcription-actions";
 import { Card } from "@/components/ui/card";
+import { Spinner } from "@/components/ui/spinner";
 import { cn } from "@/utils/styles";
-import { createClient } from "@/utils/update/server";
+import { updateClient } from "@/utils/update";
+import { Subscription } from "@updatedev/js";
+import useSWR from "swr";
 
-export default async function Page() {
-  const client = await createClient();
-  const { data, error } = await client.billing.getSubscriptions();
+async function getSubscriptions(): Promise<Subscription[]> {
+  const { data, error } = await updateClient.billing.getSubscriptions();
+  if (error) {
+    throw new Error(error.message);
+  }
+  return data.subscriptions;
+}
+
+export default function SubscriptionPage() {
+  const { data, error, mutate } = useSWR<Subscription[]>(
+    "subscriptions",
+    getSubscriptions
+  );
 
   if (error) {
+    return <div>Error fetching subscriptions: {error.message}</div>;
+  }
+
+  if (!data) {
     return (
-      <div>
-        There was an error loading your subscriptions. Please try again.
+      <div className="flex items-center justify-center h-[400px]">
+        <Spinner />
       </div>
     );
   }
@@ -26,7 +43,7 @@ export default async function Page() {
         </div>
       </div>
       <div className="space-y-6">
-        {data.subscriptions.map((subscription, index) => (
+        {data.map((subscription, index) => (
           <Card key={index}>
             <h2 className="font-medium">{subscription.product.name}</h2>
             <div className="grid gap-2 mt-2 text-sm">
@@ -63,7 +80,10 @@ export default async function Page() {
                   {subscription.status === "inactive" && "Inactive"}
                 </div>
               </div>
-              <SubscriptionActions subscription={subscription} />
+              <SubscriptionActions
+                subscription={subscription}
+                mutate={mutate}
+              />
             </div>
           </Card>
         ))}
@@ -71,7 +91,7 @@ export default async function Page() {
       <div>
         <h3 className="text-lg font-medium">Raw Data</h3>
         <div className="mt-2 border p-4 rounded-lg">
-          <pre>{JSON.stringify(data.subscriptions, null, 2)}</pre>
+          <pre>{JSON.stringify(data, null, 2)}</pre>
         </div>
       </div>
     </div>

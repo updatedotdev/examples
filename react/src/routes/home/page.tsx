@@ -1,7 +1,7 @@
-import NextLogo from "@/components/next-logo";
+import ViteLogo from "@/components/vite-logo";
 import { Button } from "@/components/ui/button";
 import UpdateLogo from "@/components/update-logo";
-import Link from "next/link";
+import { Link } from "react-router";
 
 export default function Home() {
   return (
@@ -9,36 +9,25 @@ export default function Home() {
       <div className="mx-auto max-w-xl flex flex-col">
         <div className="flex gap-8 justify-start w-full items-center">
           <a
-            href="https://update.dev/?utm_source=create-update-app&utm_medium=template&utm_term=nextjs"
+            href="https://update.dev/?utm_source=create-update-app&utm_medium=template&utm_term=vite"
             target="_blank"
             rel="noreferrer"
           >
             <UpdateLogo className="w-[128px]" />
           </a>
           <span className="border-l rotate-45 h-6" />
-          <a href="https://nextjs.org/" target="_blank" rel="noreferrer">
-            <NextLogo />
+          <a
+            href="https://vitejs.dev/"
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2"
+          >
+            <ViteLogo className="w-6 h-6" />
+            <span className="text-[28px]">Vite</span>
           </a>
         </div>
         <p className="text-3xl lg:text-4xl !leading-tight mt-4">
-          Build software faster with{" "}
-          <a
-            href="https://update.dev/?utm_source=create-update-app&utm_medium=template&utm_term=nextjs"
-            target="_blank"
-            className="font-bold hover:underline"
-            rel="noreferrer"
-          >
-            Update
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://nextjs.org/"
-            target="_blank"
-            className="font-bold hover:underline"
-            rel="noreferrer"
-          >
-            Next.js
-          </a>
+          Get started with Vite and Update
         </p>
         <p className="text-muted-foreground mt-4">
           To see your account, plans, and more, sign in or sign up to gain
@@ -47,10 +36,10 @@ export default function Home() {
         </p>
         <div className="flex gap-[8px] mt-4">
           <Button asChild className="mt-4 w-fit">
-            <Link href="/sign-in">Sign in</Link>
+            <Link to="/sign-in">Sign in</Link>
           </Button>
           <Button variant="outline" asChild className="mt-4 w-fit">
-            <Link href="/sign-up">Sign up</Link>
+            <Link to="/sign-up">Sign up</Link>
           </Button>
         </div>
         <div className="h-[1px] w-full bg-border my-12" />
