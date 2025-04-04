@@ -1,7 +1,5 @@
-"use client";
-
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link } from "react-router";
+import { useLocation } from "react-router";
 import { cn } from "@/utils/styles";
 
 type Item = {
@@ -17,7 +15,8 @@ export default function InPageSidebar({
   basePath: string;
   items: Item[];
 }) {
-  const pathname = usePathname();
+  const location = useLocation();
+  const { pathname } = location;
 
   return (
     <div className="flex flex-col justify-between min-w-[250px] mr-[8px] h-full">
@@ -58,7 +57,7 @@ function SidebarLink({
   return (
     <>
       <Link
-        href={href}
+        to={href}
         onClick={e => {
           if (isDisabled) {
             e.preventDefault();

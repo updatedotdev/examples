@@ -15,6 +15,10 @@ export default function PaidContentCard({ className }: { className?: string }) {
   const [data, setData] = useState<Data | null>(null);
 
   async function handleRegenerate() {
+    // With React / Vite, we don't have a built-in API, so you'll need to
+    // set up your own backend to complete this step. For a complete example,
+    // see the Next.js example.
+
     setIsLoading(true);
     const response = await fetch("/api/generator", {
       method: "POST",
