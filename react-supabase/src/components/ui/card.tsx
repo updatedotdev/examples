@@ -1,11 +1,6 @@
 import * as React from "react";
 import { cn } from "@/utils/styles";
 
-{
-  /* <div key={index} className="border rounded-lg p-6 space-y-4">
-<h2 className="font-medium">{subscription.product.name}</h2> */
-}
-
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
