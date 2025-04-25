@@ -18,8 +18,8 @@ importers:
         specifier: ^4.1.2
         version: 4.1.2(vite@6.3.0(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2))
       '@updatedev/js':
-        specifier: ^0.4.1
-        version: 0.4.1
+        specifier: ^0.4.2
+        version: 0.4.2
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -716,8 +716,8 @@ packages:
     resolution: {integrity: sha512-Sne/pVz8ryR03NFK21VpN88dZ2FdQXOlq3VIklbrTYEt8yXtRFr9tvUhqvCeKjqYk5FSim37sHbooT6vzBTZcg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@updatedev/js@0.4.1':
-    resolution: {integrity: sha512-39dgliK+JSh3YRvXLrCU+m8fQyvBy+yFQ27S13+hsS1bxJXIsV9FbRsAeVNzFb900atw+kQknF64bGIgCtpIRQ==}
+  '@updatedev/js@0.4.2':
+    resolution: {integrity: sha512-31V2n9esujnVHLB5C1rLobH3SpTMqlcG8JM3Mo117edGXiyuS8kVa3qxjIsB9AE+QSzC3Id+e/wPg7lIYw1DUA==}
     engines: {node: '>=12.0'}
 
   '@vitejs/plugin-react@4.4.0':
@@ -1977,7 +1977,7 @@ snapshots:
       '@typescript-eslint/types': 8.29.0
       eslint-visitor-keys: 4.2.0
 
-  '@updatedev/js@0.4.1':
+  '@updatedev/js@0.4.2':
     dependencies:
       cookie: 1.0.2
 

@@ -14,7 +14,7 @@
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.4",
     "@tailwindcss/postcss": "^4.0.13",
-    "@updatedev/js": "^0.4.1",
+    "@updatedev/js": "^0.4.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.476.0",
